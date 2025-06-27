@@ -1,37 +1,196 @@
-.hero-container .hero-wrapper {
+/* block specific CSS goes here */
+
+main .hero-container > div {
   max-width: unset;
-  padding: 0;
 }
 
-.hero {
+main .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 60px 0;
+  min-height: 500px;
+  text-align: center;
+  background: var(--gradient-blue);
+  color: var(--text-light);
+  overflow: hidden;
 }
 
-.hero h1 {
+main .hero h1 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--background-color);
+  color: var(--text-light);
+  font-size: var(--heading-font-size-xxl);
+  line-height: 1.2;
+  margin-bottom: 24px;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+main .hero p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: var(--body-font-size-l);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.hero img {
+main .hero .button-container {
+  margin-top: 40px;
+}
+
+main .hero .button {
+  background: var(--gradient-orange);
+  color: var(--text-light);
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  margin: 0 8px;
+}
+
+main .hero .button.secondary {
+  background: var(--background-white);
+  color: var(--primary-orange);
+  border: 2px solid rgba(101, 0, 4, 0.4);
+}
+
+main .hero-img {
+  line-height: 0;
+}
+
+main .hero-img picture > img {
+  display: block;
   object-fit: cover;
-  width: 100%;
+  object-position: center;
   height: 100%;
+  width: 100%;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
+/* Hero with form layout */
+main .hero.hero-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 342px;
+  gap: 60px;
+  align-items: center;
+  text-align: left;
+  padding: 60px 100px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+main .hero.hero-2-cols > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+main .hero.hero-2-cols h1 {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+main .hero.hero-2-cols p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  opacity: 0.8;
+}
+
+main .hero.hero-2-cols .button-container {
+  display: flex;
+  gap: 22px;
+  margin: 0;
+}
+
+main .hero.hero-2-cols .button {
+  margin: 0;
+  padding: 12px 32px;
+  font-size: 16px;
+  height: 44px;
+}
+
+/* Hero form styles */
+.hero-form {
+  background: var(--background-white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(17, 17, 17, 0.1);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.hero-form h3 {
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.hero-form .form-group {
+  margin-bottom: 20px;
+}
+
+.hero-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.hero-form input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 4px;
+  font-size: 16px;
+  background: var(--background-white);
+}
+
+.hero-form .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.hero-form .checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-form .checkbox-group label {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.hero-form .submit-button {
+  width: 100%;
+  background: var(--gradient-orange);
+  color: var(--text-light);
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (width < 900px) {
+  main .hero.hero-2-cols {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  main .hero h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  main .hero.hero-2-cols .button-container {
+    flex-direction: column;
   }
 }

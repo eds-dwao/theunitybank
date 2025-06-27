@@ -1,0 +1,18 @@
+{
+  "project": "ICICI Home Finance",
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Library",
+      "environments": ["edit"],
+      "url": "/tools/sidekick/library.html",
+      "includePaths": ["**.md"]
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "environments": ["edit"],
+      "url": "/tools/sidekick/tools.html"
+    }
+  ]
+}

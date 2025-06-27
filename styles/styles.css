@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
+:root {
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
@@ -71,7 +71,7 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
-  display: none;
+  display: block;
 }
 
 body.appear {
@@ -156,7 +156,7 @@ a.button:any-link, button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--unity-primary);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -165,7 +165,7 @@ a.button:any-link, button {
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: #e8830a;
   cursor: pointer;
 }
 
@@ -227,7 +227,27 @@ main .section.highlight {
   font-weight: bold;
 }
 
-.unity-card {
+/* Contact page specific styles */
+.contact-info .unity-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin: 48px 0;
+}
+
+@media (width >= 768px) {
+  .contact-info .unity-contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .contact-info .unity-contact-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.contact-info .unity-card {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -235,91 +255,123 @@ main .section.highlight {
   margin-bottom: 24px;
 }
 
-.unity-contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  margin: 48px 0;
+.contact-info .unity-card h3 {
+  color: var(--unity-secondary);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: var(--heading-font-size-s);
 }
 
-@media (width >= 768px) {
-  .unity-contact-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (width >= 1024px) {
-  .unity-contact-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.unity-address-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  margin: 48px 0;
-}
-
-@media (width >= 768px) {
-  .unity-address-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.contact-info {
+.contact-info .contact-info {
   font-size: var(--body-font-size-s);
   line-height: 1.6;
 }
 
-.contact-info strong {
+.contact-info .contact-info strong {
   color: var(--unity-secondary);
   display: block;
   margin-bottom: 8px;
 }
 
-.partner-section {
+.contact-info .contact-info a {
+  color: var(--unity-primary);
+  text-decoration: none;
+}
+
+.contact-info .contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-info .partner-section {
   background: linear-gradient(135deg, var(--unity-light-gray) 0%, #fff 100%);
   border-radius: 12px;
-  padding: 32px;
   position: relative;
   overflow: hidden;
 }
 
-.partner-section::after {
+.contact-info .partner-section::after {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background: var(--unity-primary);
   border-radius: 50%;
-  transform: translate(100px, -100px);
+  transform: translate(75px, -75px);
   z-index: 1;
+  opacity: 0.1;
 }
 
-.partner-content {
+.contact-info .partner-content {
   position: relative;
   z-index: 2;
 }
 
-.partner-benefits {
+.contact-info .partner-benefits {
   list-style: none;
   padding: 0;
   margin: 16px 0;
 }
 
-.partner-benefits li {
+.contact-info .partner-benefits li {
   padding: 4px 0;
   position: relative;
   padding-left: 20px;
 }
 
-.partner-benefits li::before {
+.contact-info .partner-benefits li::before {
   content: '•';
   color: var(--unity-primary);
   font-weight: bold;
   position: absolute;
   left: 0;
+}
+
+/* Address info styles */
+.address-info .unity-address-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin: 48px 0;
+}
+
+@media (width >= 768px) {
+  .address-info .unity-address-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.address-info .unity-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 24px;
+}
+
+.address-info .unity-card h3 {
+  color: var(--unity-secondary);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: var(--heading-font-size-s);
+}
+
+.address-info .address-info {
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+}
+
+.address-info .address-info strong {
+  color: var(--unity-secondary);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.address-info .address-info a {
+  color: var(--unity-primary);
+  text-decoration: none;
+}
+
+.address-info .address-info a:hover {
+  text-decoration: underline;
 }

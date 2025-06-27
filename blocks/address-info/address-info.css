@@ -1,0 +1,51 @@
+.address-info {
+  background: var(--background-color);
+  padding: 32px 0;
+}
+
+.address-info .unity-address-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin: 32px 0;
+}
+
+@media (width >= 768px) {
+  .address-info .unity-address-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.address-info .unity-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 24px;
+}
+
+.address-info .unity-card h3 {
+  color: var(--unity-secondary);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: var(--heading-font-size-s);
+}
+
+.address-info .address-info {
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+}
+
+.address-info .address-info strong {
+  color: var(--unity-secondary);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.address-info .address-info a {
+  color: var(--unity-primary);
+  text-decoration: none;
+}
+
+.address-info .address-info a:hover {
+  text-decoration: underline;
+}

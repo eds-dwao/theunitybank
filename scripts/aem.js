@@ -554,7 +554,7 @@ export function decorateIcon(span, prefix = '', alt = '') {
  * @param {Element} [element] Element containing icons
  * @param {string} [prefix] prefix to be added to icon src
  */
-export function decorateIcons(element = document, prefix = '') {
+export function decorateIconss(element = document, prefix = '') {
   element.querySelectorAll('span.icon').forEach((span) => {
     decorateIcon(span, prefix);
   });

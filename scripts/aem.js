@@ -605,6 +605,28 @@ async function loadHeader(header) {
   return loadBlock(headerBlock);
 }
 
+
+/**
+ * Decorates all external links and download links with icons.
+ * @param {Element} element container element
+ */
+export function decorateExternalLinks(element) {
+  element.querySelectorAll('a').forEach((a) => {
+    if (isExternalLink(a) || isDownloadLink(a)) {
+      const up = a.parentElement;
+      // don't decorate buttons
+      if (a.classList.contains('button')) return;
+      if (up.childNodes.length === 1 && up.tagName === 'P') {
+        // don't decorate standalone links
+        return;
+      }
+      const span = document.createElement('span');
+      span.className = isDownloadLink(a) ? 'icon icon-download' : 'icon icon-external';
+      a.append(span);
+    }
+  });
+}
+
 /**
  * Loads a block named 'footer' into footer
  * @param footer footer element

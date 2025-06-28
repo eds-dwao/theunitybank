@@ -1,7 +1,7 @@
 import { getMetadata } from '../../scripts/aem.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = new MatchMedia('(min-width: 900px)');
+const isDesktop = window.innerWidth >= 1024;
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');

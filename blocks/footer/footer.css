@@ -1,20 +1,125 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+.footer {
+  background-color: var(--unity-dark);
+  color: white;
+  padding: 3rem 0 1rem;
 }
 
-footer .footer > div {
-  margin: auto;
+.footer .footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-footer .footer p {
+@media (width >= 768px) {
+  .footer .footer-content {
+    padding: 0 2rem;
+  }
+}
+
+.footer .footer-section h4 {
+  color: var(--unity-primary);
+  font-size: var(--heading-font-size-s);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer .footer-section ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+.footer .footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer .footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  transition: color 0.3s ease;
+}
+
+.footer .footer-section a:hover {
+  color: var(--unity-primary);
+}
+
+.footer .footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (width >= 768px) {
+  .footer .footer-bottom {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
+}
+
+.footer .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer .footer-logo img {
+  width: 80px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.footer .footer-logo p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  color: #ccc;
+}
+
+.footer .footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+@media (width < 768px) {
+  .footer .footer-legal {
+    align-items: flex-start;
+  }
+}
+
+.footer .footer-legal p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  color: #ccc;
+}
+
+.footer .footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer .footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: var(--body-font-size-xs);
+  transition: color 0.3s ease;
+}
+
+.footer .footer-links a:hover {
+  color: var(--unity-primary);
 }
